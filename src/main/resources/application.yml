@@ -1,0 +1,14 @@
+quarkus:
+  native:
+    additional-build-args: >
+      --trace-object-instantiation=io.netty.handler.ssl.ReferenceCountedOpenSslContext,
+      --trace-class-initialization=io.netty.handler.ssl.ReferenceCountedOpenSslContext,
+      --initialize-at-run-time=com.microsoft.azure.proton.transport.proxy.impl.DigestProxyChallengeProcessorImpl,
+      --initialize-at-run-time=com.microsoft.azure.proton.transport.ws.impl.Utils
+
+app:
+  env:
+    azure:
+      storage:
+        queueName: replace_with_eh_name
+        connectionString: replace_with_connection_string
